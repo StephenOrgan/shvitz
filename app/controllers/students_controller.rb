@@ -9,6 +9,16 @@ class StudentsController < ApplicationController
     	end
   	end
 
+
+  def show
+      @student = Student.find(params[:id])
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @student }
+      end
+    end
+
   	def new
       	@student = Student.new
       	@users = User.all
