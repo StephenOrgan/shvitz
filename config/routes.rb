@@ -1,4 +1,10 @@
 Shvitz::Application.routes.draw do
+ 
+
+  devise_for :users
+
+resources :students
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
