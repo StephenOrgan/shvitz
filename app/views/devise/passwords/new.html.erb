@@ -1,3 +1,8 @@
+<div style="background-image:url('https://dl.dropboxusercontent.com/u/18653929/Fotolia_41772907_M.jpg'); background-repeat:no-repeat; height: 800px; width: 1300px">
+<div class="containter-fluid">
+	<div class="row-fluid" id="pageHeader">
+		<div class="span6 hero-unit" style="color:black; padding-left: 30px; background-color:#ffffff; border:1px grey; opacity:0.93; filter:alpha(opacity=93); position:fixed; z-index: 100;  top:30%;  left:30%;  margin:-100px 0 0 -100px;  width:400px;  height:700px;">
+
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
@@ -6,7 +11,12 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+  <div><%= f.submit "Send me reset password instructions", :class => 'btn btn-danger' %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+		</div>
+	</div>	
+	</div>

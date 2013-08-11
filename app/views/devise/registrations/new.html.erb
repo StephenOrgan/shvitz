@@ -1,21 +1,31 @@
+<div style="background-image:url('https://dl.dropboxusercontent.com/u/18653929/Fotolia_41772907_M.jpg'); background-repeat:no-repeat; height: 800px; width: 1300px">
+<div class="containter-fluid">
+	<div class="row-fluid" id="pageHeader">
+		<div class="span6 hero-unit" style="color:black; padding-left: 30px; background-color:#ffffff; border:1px grey; opacity:0.93; filter:alpha(opacity=93); position:fixed; z-index: 100;  top:30%;  left:30%;  margin:-100px 0 0 -100px;  width:400px;  height:700px;">
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
- <div><%= f.label :name %><br />
+ <div><%= f.label :name %>
   <%= f.text_field :name, :autofocus => true %></div>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password %>
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", :class => 'btn btn-warning' %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+		</div>
+	</div>	
+	</div>
