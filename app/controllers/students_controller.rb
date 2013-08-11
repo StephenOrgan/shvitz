@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
 
   	def new
       	@student = Student.new
+      	@users = User.all
 
       	respond_to do |format|
       	format.html # new.html.erb

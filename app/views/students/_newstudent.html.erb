@@ -11,10 +11,14 @@
     </div>
 <% end %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
+    
   </div>
-
+  <div class="field">
+  <%= f.label :user_id, "Trainer" %>
+  <%= f.select :user_id, @users.map{ |c| [c.name, "#{c.id}"] } %>
+</div>
   <div class="actions">
 
     <%= f.submit 'Create Student', :class => 'btn btn-success' %>

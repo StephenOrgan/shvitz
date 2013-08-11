@@ -6,16 +6,18 @@
             <table class="table table-striped">
               <tr>
                 <th>Student Name</th>
-                <th></th>
+                <th>Trainer</th>
              
-                <th></th>
+                <th>Actions</th>
               </tr>
 
             <% @students.each do |student| %>
               <tr>
                 <td><%= link_to student.name, student %></td>
-                <td><%= link_to 'Edit', edit_student_path(student) %></td>
-                <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= student.user.name %></td>
+
+                <td><%= link_to 'Edit', edit_student_path(student) %>
+                | <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
             </table>
