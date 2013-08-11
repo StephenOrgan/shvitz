@@ -2,7 +2,6 @@ class StudentsController < ApplicationController
 	
 	def index
     	@students = Student.all
-
     	respond_to do |format|
       	format.html # index.html.erb
       	format.json { render json: @student }
@@ -12,6 +11,7 @@ class StudentsController < ApplicationController
 
   def show
       @student = Student.find(params[:id])
+      @trainer = @student.user
 
       respond_to do |format|
         format.html # index.html.erb
