@@ -24,10 +24,9 @@
 
 
     <%= f.label :duration, 'Duration?'%>
-   <%= f.number_field :duration %>
-
-   <!--  <%= select_tag :duration, options_for_select([['30 Minutes', 1800.to_i], ['1hour', 3600.to_i]],2) %>
- -->
+   
+   <%= f.select :duration, options_for_select([['30 Minutes', 1800.to_i], ['1hour', 3600.to_i]],2) %>
+ 
   </div>
  
   <div id="datetimepicker" class="input-append date">
