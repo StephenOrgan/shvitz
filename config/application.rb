@@ -34,6 +34,9 @@ module Shvitz
     # config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+
     config.assets.initialize_on_precompile = false
     config.encoding = "utf-8"
 

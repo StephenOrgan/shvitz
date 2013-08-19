@@ -1,0 +1,79 @@
+<%= form_for [@student, @session] do |f| %>
+<% if @session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% @session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+  <div style="position: fixed;
+  width: 600px;
+  height: 200px;
+  left: 45%;
+  top: 26.5%;
+  margin-left: -300px;">
+    <%= f.label :recur, 'Repeat Weekly', :class => "checkbox inline" %>
+    <%= f.check_box :recur %>
+  </div>
+  <div>
+
+
+
+    <%= f.label :duration, 'Duration?'%>
+   <%= f.number_field :duration %>
+
+   <!--  <%= select_tag :duration, options_for_select([['30 Minutes', 1800.to_i], ['1hour', 3600.to_i]],2) %>
+ -->
+  </div>
+ 
+  <div id="datetimepicker" class="input-append date">
+  <%= f.label :start_date, 'Start Date'%>
+  <%= f.text_field :start_date, :format => "MM/dd/yyyy HH:mm PP", :type => 'text' %>  
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+ <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm',
+        language: 'en',
+    pick12HourFormat: true
+      });
+    </script>
+    <div>
+    <div class="field">
+  <%= f.label :user_id, "Trainer" %>
+  <%= f.select :user_id, @users.map{ |c| [c.name, "#{c.id}"] } %>
+  <%= f.hidden_field :student_id, :value => @student.id  %>
+  </div>
+    </div>
+    <div style="padding-top: 20px;">
+    <%= f.submit 'Start Schedule', :class => 'btn btn-success' %>
+    </div>
+  </div>
+
+  
+
+  <div class="actions">
+
+    <%= f.submit 'Start Schedule', :class => 'btn btn-success' %>
+  </div>
+  
+<% end %>

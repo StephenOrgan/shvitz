@@ -49,6 +49,7 @@ GEM
       multi_json (~> 1.0)
     hike (1.2.3)
     i18n (0.6.4)
+    ice_cube (0.11.0)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -124,10 +125,12 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
+  ice_cube
   jquery-rails
   pg
   pry
   rails (= 3.2.11)
+  rake
   sass-rails (~> 3.2.3)
   sqlite3
   state_machine

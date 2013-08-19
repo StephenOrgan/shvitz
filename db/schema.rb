@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811160343) do
+ActiveRecord::Schema.define(:version => 20130818023542) do
+
+  create_table "sessions", :force => true do |t|
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "student_id"
+    t.integer  "user_id"
+    t.string   "status"
+    t.string   "schedule_yaml"
+    t.datetime "start_date"
+    t.string   "timeshift"
+    t.integer  "recur"
+    t.integer  "duration"
+  end
 
   create_table "students", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20130811160343) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.integer  "timezone"
+    t.string   "timeshift"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

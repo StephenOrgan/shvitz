@@ -12,6 +12,8 @@ class StudentsController < ApplicationController
   def show
       @student = Student.find(params[:id])
       @trainer = @student.user
+      @sessions = @student.sessions
+      
 
       respond_to do |format|
         format.html # index.html.erb
@@ -20,16 +22,16 @@ class StudentsController < ApplicationController
     end
 
   	def new
-      	@student = Student.new
-      	@users = User.all
+        @student = Student.new
+        @users = User.all
 
-      	respond_to do |format|
-      	format.html # new.html.erb
-      	format.json { render json: @student }
-      	end
-  	end
+        respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @student }
+        end
+    end
 
-  	def create
+    def create
     @student = Student.new(params[:student])
 
     respond_to do |format|

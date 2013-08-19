@@ -3,7 +3,11 @@ Shvitz::Application.routes.draw do
 
   devise_for :users
 
-resources :students
+resources :students do
+  resources :sessions
+ end 
+
+
 
 root :to => 'students#index'
 
